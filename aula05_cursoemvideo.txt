@@ -1,0 +1,28 @@
+Jubileu, conta poupança, depositou 300
+Creusa, conta corrente, depositou 500
+
+Creusa sacou 100,00
+
+
+CC - Corrente - começa com 50,00
+CP - Poupança - começa com 150,00
+
+
+atributos:
++numConta
+#tipo
+- dono
+- saldo
+- status (ativa/inativa)
+
+---------
+Metodos (todos publicos)
+abrirConta()
+fecharConta()
+depositar()
+sacar()
+pagarMensal()
+
+criar todos getter e setter para os atributos
+Sempre que a conta for criada ela status será falso e saldo 0
+
