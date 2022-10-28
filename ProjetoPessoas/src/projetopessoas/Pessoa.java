@@ -1,14 +1,17 @@
 package projetopessoas;
+
 public class Pessoa {
+
     private String nome;
     private int idade;
     private String sexo;
-    
-    public void fazerAniv(){
-        this.idade++;
-        
-    }
 
+    // método construtor com parâmetro
+    public void fazerAniv() {
+        this.idade++;
+
+    }
+//métodos getters e setters
     public String getNome() {
         return nome;
     }
@@ -37,8 +40,5 @@ public class Pessoa {
     public String toString() {
         return "Pessoa{" + "nome=" + nome + ", idade=" + idade + ", sexo=" + sexo + '}';
     }
-    
-    
-    
-    
+
 }

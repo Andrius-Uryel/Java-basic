@@ -1,16 +1,20 @@
 package projetopessoas;
-public class Funcionario extends Pessoa {
+
+public class Funcionario extends Pessoa { //herda dados da classe pessoa
+
     private String setor;
     private boolean trabalhando;
-    
-    public void mudarTrabalho(){
-        if (this.trabalhando == true){
+
+    //método construtor padrão
+    public void mudarTrabalho() {
+        if (this.trabalhando == true) {
             this.setTrabalhando(false);
-        }else{
+        } else {
             this.setTrabalhando(true);
         }
     }
 
+    //métodos getters e setters
     public String getSetor() {
         return setor;
     }
@@ -26,5 +30,5 @@ public class Funcionario extends Pessoa {
     public void setTrabalhando(boolean trabalhando) {
         this.trabalhando = trabalhando;
     }
-    
+
 }
