@@ -1,18 +1,19 @@
 package aula06;
 
-public class ControleRemoto implements Controlador {
+public class ControleRemoto implements Controlador { // classe controle remoto que tem implementada a interface controlador
 
-    private int volume;
-    private boolean ligado;
-    private boolean tocando;
+    private int volume; // variável de volume
+    private boolean ligado; // variável para ligar
+    private boolean tocando; // variável para tocar
 
-    public ControleRemoto() {
+    public ControleRemoto() { //método contrutor com parâmetros
         this.volume = 30;
         this.ligado = false;
         this.tocando = false;
 
     }
 
+    //métodos especiais
     public int getVolume() {
         return volume;
     }
@@ -53,7 +54,7 @@ public class ControleRemoto implements Controlador {
         System.out.println("Esta ligado?" + this.getLigado());
         System.out.println("Esta tocando?" + this.getTocando());
         System.out.print("Volume: " + this.getVolume());
-        for (int i = 0; i < this.getVolume(); i += 10){
+        for (int i = 0; i < this.getVolume(); i += 10) {
             System.out.print("[x]");
         }
         System.out.println(" ");
@@ -67,43 +68,44 @@ public class ControleRemoto implements Controlador {
 
     @Override
     public void maisVolume() {
-        if (this.getLigado() == true){
+        if (this.getLigado() == true) {
             setVolume(this.getVolume() + 10);
         }
     }
 
     @Override
     public void menosVolume() {
-        if (this.getLigado() == true){
+        if (this.getLigado() == true) {
             setVolume(this.getVolume() - 10);
         }
     }
 
     @Override
     public void ligarMudo() {
-        if (this.getLigado() == true && this.getVolume() > 0){
+        if (this.getLigado() == true && this.getVolume() > 0) {
             setVolume(0);
         }
     }
 
     @Override
     public void desligarMudo() {
-        if (this.getLigado() == true && this.getVolume() == 0){
+        if (this.getLigado() == true && this.getVolume() == 0) {
             setVolume(30);
         }
     }
 
     @Override
     public void play() {
-        if (this.getLigado() && !(this.getTocando())){
+        if (this.getLigado() && !(this.getTocando())) {
             setTocando(true);
         }
     }
 
     @Override
     public void pause() {
-        if (this.getLigado() && this.getTocando())
+        if (this.getLigado() && this.getTocando()) {
             setTocando(false);
+        }
     }
 
 }
