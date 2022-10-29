@@ -3,36 +3,41 @@ package UltimateEmojiFighter;
 import java.util.Random;
 
 public class Luta {
+
     private Lutador desafiado;
     private Lutador desafiante;
     private int round;
     private boolean aprovada;
-    
-    public void marcarLuta(Lutador l1, Lutador l2){
-        if (l1.getCategoria().equals(l2.getCategoria()) && l1 != l2){
+
+    //método para marcar luga com condições
+    public void marcarLuta(Lutador l1, Lutador l2) {
+        if (l1.getCategoria().equals(l2.getCategoria()) && l1 != l2) {
             System.out.println("===== Luta Marcada =====");
-            System.out.println("===== " + this.getDesafiante() + " x " + this.getDesafiado()+ " =====");
+            System.out.println("===== " + this.getDesafiante() + " x " + this.getDesafiado() + " =====");
             this.aprovada = true;
             this.desafiado = l1;
             this.desafiante = l2;
-        }else {
-            System.out.println("Infelizmentres \" + l1.getNome() + \" e \" + l2e os lutadores " + l1.getNome() + " e " + l2.getNome()+ " nao podem ser lutar");
+        } else {
+            System.out.println("Infelizmentres \" + l1.getNome() + \" e \" + l2e os lutadores " + l1.getNome() + " e " + l2.getNome() + " nao podem ser lutar");
             System.out.println("Impossivel marcar a luta");
             this.aprovada = false;
             this.desafiado = null;
             this.desafiante = null;
         }
-    }    
-    public void lutar(){
-        if (this.aprovada){
+    }
+
+    //método para lutar, com condições
+    public void lutar() {
+        if (this.aprovada) {
             System.out.println("***** DESAFIADO *****");
             this.desafiado.apresentar();
             System.out.println("***** DESAFIANTE *****");
             this.desafiante.apresentar();
-            
-            Random aleatorio = new Random ();
+
+            // abaixo foi utilizado a classe random para conseguir randomizar vencedor
+            Random aleatorio = new Random();
             int vencedor = aleatorio.nextInt(3); // 0 1 2
-            switch(vencedor){
+            switch (vencedor) {
                 case 0: // empate
                     System.out.println("*** EMPATOU ***");
                     this.desafiado.empatarLuta();
@@ -40,7 +45,7 @@ public class Luta {
                     break;
                 case 1: // Desafiado vence
                     System.out.println("=================================");
-                    System.out.println("***Ganhador: " + this.desafiado.getNome()+ "***");
+                    System.out.println("***Ganhador: " + this.desafiado.getNome() + "***");
                     System.out.println("=================================");
                     this.desafiado.ganharLuta();
                     this.desafiante.perderLuta();
@@ -53,12 +58,13 @@ public class Luta {
                     this.desafiante.ganharLuta();
                     break;
             }
-        }else {
+        } else {
             System.out.println("Esta luta nao podera ocorrer");
         }
-        
+
     }
 
+    //métodos getters e setters
     public Lutador getDesafiado() {
         return desafiado;
     }
@@ -90,6 +96,5 @@ public class Luta {
     public void setAprovada(boolean aprovada) {
         this.aprovada = aprovada;
     }
-    
-    
+
 }

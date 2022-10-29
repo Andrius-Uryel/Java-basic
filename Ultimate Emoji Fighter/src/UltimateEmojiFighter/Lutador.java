@@ -1,5 +1,7 @@
 package UltimateEmojiFighter;
+
 public class Lutador {
+
     private String nome;
     private String nacionalidade;
     private int idade;
@@ -10,37 +12,40 @@ public class Lutador {
     private int derrotas;
     private int empates;
 
-    
-    public void apresentar(){
+    // método para apresentar lutadores
+    public void apresentar() {
         System.out.println("CHEGOU A HORA! Apresentamos o lutador " + this.getNome());
         System.out.println("Diretamente de " + this.getNacionalidade());
-        System.out.println("Tendo a idade de " + this.getIdade() + "anos e pesando " + this.getPeso() + "KG." );
+        System.out.println("Tendo a idade de " + this.getIdade() + "anos e pesando " + this.getPeso() + "KG.");
         System.out.println("Vitorias: " + this.getVitorias());
         System.out.println("Derrotas: " + this.getDerrotas());
         System.out.println("Empates: " + this.getEmpates());
     }
-    
-    public void status(){
+
+    //método com status
+    public void status() {
         System.out.println(this.getNome() + "eh um peso " + this.getCategoria());
         System.out.println("Ganhou " + this.getVitorias() + "vezes");
         System.out.println("Perdeu " + this.getDerrotas() + "vezes");
         System.out.println("Empatou " + this.getEmpates() + "vezes");
-        
-    }
-    
-    public void ganharLuta(){
-        this.setVitorias(this.getVitorias() + 1);        
-    }
-    
-    public void perderLuta (){
-        this.setDerrotas(this.getDerrotas() + 1);
-    }
-    
-    public void empatarLuta(){
-        this.setEmpates(this.getEmpates() +1);        
+
     }
 
-    public Lutador(String no, String na, int id, float al, 
+    //métodos getters e setters
+    public void ganharLuta() {
+        this.setVitorias(this.getVitorias() + 1);
+    }
+
+    public void perderLuta() {
+        this.setDerrotas(this.getDerrotas() + 1);
+    }
+
+    public void empatarLuta() {
+        this.setEmpates(this.getEmpates() + 1);
+    }
+
+    // método contrutor do lutador com parâmetros
+    public Lutador(String no, String na, int id, float al,
             float pe, int vi, int de, int em) {
         this.nome = no;
         this.nacionalidade = na;
@@ -50,9 +55,9 @@ public class Lutador {
         this.vitorias = vi;
         this.derrotas = de;
         this.empates = em;
-    }     
-    
-    
+    }
+
+    //métodos getters e setters
     public String getNome() {
         return nome;
     }
@@ -99,15 +104,15 @@ public class Lutador {
     }
 
     private void setCategoria() {
-        if (this.peso < 52.2){
+        if (this.peso < 52.2) {
             this.categoria = "Inválido";
-        }else if (peso <= 70.3){
+        } else if (peso <= 70.3) {
             this.categoria = "Leve";
-        }else if (this.peso <= 83.9){
+        } else if (this.peso <= 83.9) {
             this.categoria = "Medio";
-        }else if(this.peso <= 120.2){
+        } else if (this.peso <= 120.2) {
             this.categoria = "Pesado";
-        }else{
+        } else {
             this.categoria = "Invalido";
         }
     }
@@ -135,5 +140,5 @@ public class Lutador {
     public void setEmpates(int empates) {
         this.empates = empates;
     }
-    
+
 }
